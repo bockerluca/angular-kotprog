@@ -1,0 +1,19 @@
+<form [formGroup]="geneForm" (ngSubmit)="onSubmit()" novalidate>
+  <div>
+    <mat-form-field class="col-sm">
+      <mat-label>Short Name</mat-label>
+      <input matInput formControlName="shortName" type="text" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="col-sm">
+      <mat-label>Full Name</mat-label>
+      <input matInput formControlName="fullName" type="text" />
+    </mat-form-field>
+  </div>
+
+  <div  class="d-flex flex-row-reverse">
+    <button mat-raised-button type="submit"><mat-icon>save</mat-icon> Save</button>
+  </div>
+</form>

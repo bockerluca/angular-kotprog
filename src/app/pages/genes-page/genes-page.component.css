@@ -1,0 +1,35 @@
+#spieces {
+    color: #536878;
+    padding: 20px;
+    font-size: 30px;
+}
+
+mat-card {
+  position: relative;
+  top: 3%;
+  left: 50%;
+  width: 200px;
+  height: 100px;
+  color: white;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 25px;
+  padding: 10px, 5px;
+  text-align: center;
+  margin-left: -120px;
+  margin-top: 30px;
+}
+mat-card:hover {
+  box-shadow: 5px 8px #536878;
+  cursor: pointer;
+}
+#humanGenes {
+  background-image: url(../../../assets/img/img_humanGenes.jpg);
+
+}
+#drosiGenes {
+  background-image: url(../../../assets/img/img_drosiGenes.jpg);
+}
+#yeastGenes {
+  background-image: url(../../../assets/img/img_yeastGenes.jpg);
+}
+

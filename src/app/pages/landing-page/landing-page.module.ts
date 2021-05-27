@@ -4,14 +4,8 @@ import { LandingPageComponent } from './landing-page.component';
 import { LandingPageRoutingModule } from './landing-page-routing.module';
 import { MaterialModule } from 'src/app/shared/modules/material.module';
 
-
-
 @NgModule({
   declarations: [LandingPageComponent],
-  imports: [
-    CommonModule,
-    LandingPageRoutingModule,
-    MaterialModule
-  ]
+  imports: [CommonModule, LandingPageRoutingModule, MaterialModule],
 })
-export class LandingPageModule { }
+export class LandingPageModule {}

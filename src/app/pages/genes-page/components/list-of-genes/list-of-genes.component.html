@@ -1,0 +1,17 @@
+<h1 *ngIf="!genes"><mat-spinner class="custom-spinner center"></mat-spinner></h1>
+<table *ngIf="genes" class="table table-striped center">
+  <thead>
+    <tr>
+      <th scope="col">Short Name</th>
+      <th scope="col">Full Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let gene of genes">
+      <td>{{gene.shortName}}</td>
+      <td>{{gene.fullName}}</td>
+      <td><mat-button (click)="openEditGenesModal(gene)"><mat-icon>edit</mat-icon></mat-button></td>
+      <td><mat-button (click)="deleteThisGene(gene)"><mat-icon>delete</mat-icon></mat-button></td>
+    </tr>
+  </tbody>
+</table>

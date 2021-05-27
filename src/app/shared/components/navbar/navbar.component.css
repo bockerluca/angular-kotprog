@@ -1,0 +1,10 @@
+mat-toolbar {
+    color: white;
+    background-color:#536878;
+}
+mat-search-bar {
+    position: absolute;
+    right: 10%;
+}
+
+

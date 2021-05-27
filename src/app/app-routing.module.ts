@@ -4,7 +4,24 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'landing-page',
-    loadChildren: () => import('./pages/landing-page/landing-page.module').then((m) => m.LandingPageModule),
+    loadChildren: () =>
+      import('./pages/landing-page/landing-page.module').then(
+        (m) => m.LandingPageModule
+      ),
+  },
+  {
+    path: 'genes-page',
+    loadChildren: () =>
+      import('./pages/genes-page/genes-page.module').then(
+        (m) => m.GenesPageModule
+      ),
+  },
+  {
+    path: 'sequences-page',
+    loadChildren: () =>
+      import('./pages/sequences-page/sequences-page.module').then(
+        (m) => m.SequencesPageModule
+      ),
   },
   {
     path: '',
@@ -16,10 +33,11 @@ const routes: Routes = [
     redirectTo: 'landing-page',
     pathMatch: 'full',
   },
+  
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
