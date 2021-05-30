@@ -28,6 +28,10 @@ export class GenesPageComponent implements OnInit {
         this.title = 'Saccharomyces cerevisiae';
         break;
       }
+      default: {
+        this.title = 'Spieces';
+
+      }
     }
   }
 

@@ -13,6 +13,7 @@ export class SequencesPageComponent implements OnInit {
   sequences: SequencesModel[];
   nucleotide: string;
   sequenceSubcription: Subscription;
+  splitedSequence: string;
   constructor(private sequencesService: SequencesService) {}
 
   ngOnInit(): void {
@@ -63,7 +64,6 @@ export class SequencesPageComponent implements OnInit {
       }
       this.sequence += '\n';
     }
-
   }
   generateRandomSequences(){
       for(var i = 0; i < 100; i++){
