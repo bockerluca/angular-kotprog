@@ -11,6 +11,8 @@ mat-card {
   text-align: center;
   margin-left: -120px;
   margin-top: 30px;
+  text-shadow: 2px 2px black;
+  
 }
 mat-card:hover {
   box-shadow: 5px 8px #536878;
@@ -21,6 +23,9 @@ mat-card:hover {
 }
 #genes {
   background-image: url(../../../assets/img/img_genes.jpg);
+}
+#author {
+  background-color: rgb(34, 32, 32);
 }
 a {
   text-decoration: none;

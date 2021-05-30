@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditGenesModalComponent } from './edit-genes-modal.component';
 
-describe('EditIngredientModalComponent', () => {
+describe('EditGenesModalComponent', () => {
   let component: EditGenesModalComponent;
   let fixture: ComponentFixture<EditGenesModalComponent>;
 

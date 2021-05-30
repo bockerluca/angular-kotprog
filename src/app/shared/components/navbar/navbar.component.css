@@ -1,6 +1,11 @@
-mat-toolbar {
+.webMode {
     color: white;
     background-color:#536878;
+}
+.mobilMode {
+    color: white;
+    background-color: rgb(92, 167, 154);
+
 }
 mat-search-bar {
     position: absolute;

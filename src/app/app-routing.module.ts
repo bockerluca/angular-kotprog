@@ -24,6 +24,13 @@ const routes: Routes = [
       ),
   },
   {
+  path: 'author-page',
+  loadChildren: () =>
+    import('./pages/author-page/author-page.module').then(
+      (m) => m.AuthorPageModule
+    ),
+},
+  {
     path: '',
     redirectTo: 'landing-page',
     pathMatch: 'full',

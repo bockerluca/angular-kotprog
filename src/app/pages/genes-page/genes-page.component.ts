@@ -15,5 +15,20 @@ export class GenesPageComponent implements OnInit {
 
   selectCategory(category: string){
     this.selectedCategory = category;
+    switch (category){
+      case 'genes': {
+        this.title = 'Human';
+        break;
+      }
+      case 'drosiGenes': {
+        this.title = 'Drosophila Melanogaster';
+        break;
+      }
+      case 'yeastGene': {
+        this.title = 'Saccharomyces cerevisiae';
+        break;
+      }
+    }
   }
+
 }

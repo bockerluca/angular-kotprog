@@ -14,13 +14,16 @@ export class EditGenesModalComponent implements OnInit {
     shortName: [this.data.geneToEdit?.shortName || '', [Validators.required]],
     fullName: [this.data.geneToEdit?.fullName || '', [Validators.required]],
   });
+  selectedCategory: string;
 
   constructor(
     private _fb: FormBuilder,
     public dialogRef: MatDialogRef<EditGenesModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { geneToEdit: GenesModel },
+    @Inject(MAT_DIALOG_DATA) public data: { geneToEdit: GenesModel, category: string },
     private genesService: GenesService
-  ) {}
+  ) {
+    this.selectedCategory = data.category;
+  }
 
   ngOnInit(): void {}
   onSubmit(): void {
@@ -30,11 +33,11 @@ export class EditGenesModalComponent implements OnInit {
         genesFromFormGroup.documentReference =
           this.data.geneToEdit.documentReference;
         this.genesService
-          .updateGene(genesFromFormGroup)
+          .updateGene(this.selectedCategory, genesFromFormGroup)
           .then((resolve) => this.dialogRef.close());
       } else {
         this.genesService
-          .createGene(genesFromFormGroup)
+          .createGene(this.selectedCategory, genesFromFormGroup)
           .then((resolve) => this.dialogRef.close());
       }
     }

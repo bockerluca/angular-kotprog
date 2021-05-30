@@ -1,5 +1,4 @@
-<mat-toolbar>
-  <span>{{title}}</span>
-  <mat-search-bar (click) = "checkTitle()"></mat-search-bar>
+<mat-toolbar [ngClass]="scrWidth <= 480? 'mobilMode': 'webMode'">
+  <span>{{ title }}</span>
+  <mat-search-bar (click)="checkTitle()"></mat-search-bar>
 </mat-toolbar>
-

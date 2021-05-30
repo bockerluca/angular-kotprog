@@ -1,13 +1,35 @@
-<h2 id="spieces">{{title}}</h2>
-<div *ngIf="!selectedCategory" aria-disabled="true" else aria-disabled="false">
-<div fxLayout="row wrap">
-  <div fxFlex="25%">
-    <mat-card id="humanGenes" (click)="selectCategory('human')">Human</mat-card>
-    <mat-card id="drosiGenes" (click)="selectCategory('drosi')">Drosophila melanogaster</mat-card>
-    <mat-card id="yeastGenes" (click)="selectCategory('yeast')">Saccharomyces cerevisiae</mat-card>
+<button
+  *ngIf="selectedCategory"
+  aria-disabled="true"
+  else
+  aria-disabled="false"
+  class="mat-button"
+  (click)="selectCategory(null)"
+>
+  <mat-icon>arrow_left</mat-icon>
+</button>
+<h2 id="spieces">{{ title }}</h2>
+<div class="container">
+  <div
+    *ngIf="!selectedCategory"
+    aria-disabled="true"
+    else
+    aria-disabled="false"
+  >
+      <div>
+        <mat-card id="humanGenes" (click)="selectCategory('genes')"
+          >Human</mat-card
+        >
+        <mat-card id="drosiGenes" (click)="selectCategory('drosiGenes')"
+          >Drosophila melanogaster</mat-card
+        >
+        <mat-card id="yeastGenes" (click)="selectCategory('yeastGene')"
+          >Saccharomyces cerevisiae</mat-card
+        >
+    </div>
   </div>
 </div>
-</div>
+
 <div *ngIf="selectedCategory" aria-disabled="true" else aria-disabled="false">
   <app-list-of-genes [selectedCategory]="selectedCategory"></app-list-of-genes>
 </div>

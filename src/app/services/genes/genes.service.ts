@@ -6,35 +6,40 @@ import { AngularFirestore } from '@angular/fire/firestore';
   providedIn: 'root',
 })
 export class GenesService {
-  constructor(private _firestore: AngularFirestore) {}
-
-  getGenes() {
-    return this._firestore.collection('genes').snapshotChanges();
+  
+  constructor(private _firestore: AngularFirestore) {
   }
 
-  createGene(gene: GenesModel):  Promise<any>{
+ getGenes(selectedCategory: string) {
+      return this._firestore.collection(selectedCategory, ref =>ref.orderBy('shortName', 'asc')).snapshotChanges().pipe(genes => {
+        console.log(genes);
+        return genes;
+      });
+  }
+
+  createGene(selectedCategory: string, gene: GenesModel):  Promise<any>{
     return new Promise<any>((resolve, reject) => {
       this._firestore
-        .collection('genes')
+        .collection(selectedCategory)
         .add(gene)
         .then(resolve => {}, err => reject(err));
     });
   }
 
-  updateGene(gene: GenesModel): Promise<any> {
+  updateGene(selectedCategory: string, gene: GenesModel): Promise<any> {
     return new Promise<any>((resolve, reject) => {
       this._firestore
-        .collection('genes')
+        .collection(selectedCategory)
         .doc(gene.documentReference)
         .update(gene)
         .then(resolve => {}, err => reject(err));
     });
   }
 
-  deleteGene(gene: GenesModel): Promise<any> {
+  deleteGene(selectedCategory: string, gene: GenesModel): Promise<any> {
     return new Promise<any>((resolve, reject) => {
       this._firestore
-        .collection('genes')
+        .collection(selectedCategory)
         .doc(gene.documentReference)
         .delete()
         .then(resolve => {}, err => reject(err));
